@@ -60,7 +60,7 @@ RUN curl -fSL "https://download.nomachine.com/download/7.7/Linux/nomachine_7.7.4
 
 # add a user to access our desktop env
 RUN groupadd -r nomachine -g 10001 && \
-    useradd nomachine -u 10000 -g nomachine -d /home/nomachine -m -s /bin/bash && \
+    useradd user -u 10000 -g nomachine -d /home/nomachine -m -s /bin/bash && \
     echo 'user:123456' | chpasswd
 
 # add user to suduoers
