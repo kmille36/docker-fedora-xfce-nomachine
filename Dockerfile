@@ -1,4 +1,4 @@
-FROM fedora:31
+FROM fedora:34
 
 # get a slightly lighter version of xfce that actually works and some common tools for development and troubleshooting
 # certainly can be made skinnier, in due time
@@ -54,7 +54,7 @@ RUN yum update -y && yum install -y \
 RUN mkdir -p /var/lib/dbus && dbus-uuidgen > /var/lib/dbus/machine-id && mkdir -p /var/run/dbus
 
 # install nomachine
-RUN curl -fSL "https://download.nomachine.com/download/6.9/Linux/nomachine_6.9.2_1_x86_64.rpm" -o nomachine.rpm && \
+RUN curl -fSL "https://download.nomachine.com/download/7.7/Linux/nomachine_7.7.4_1_x86_64.rpm" -o nomachine.rpm && \
     rpm -i nomachine.rpm && \
     rm -rf nomachine.rpm
 
